@@ -1,0 +1,33 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+
+label {
+    display: block;
+    padding-bottom: 1%;
+}
+
+textarea, input[type=text], input[type=email] {
+    width: 100%;
+}
+
+fieldset{
+    border: 0;
+    padding-bottom: 3%;
+}
+
+fieldset div  {
+    margin-bottom: 3%;
+}
+
+.leftcontainer {
+    float: left;
+    width: 50%;
+}
+
+.rightcontainer {
+    float: right;
+    width: 46%;
+    padding-left: 2%;
+}

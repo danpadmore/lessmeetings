@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collaborate - Less Meetings</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Less Meetings</h1>
+    <h2>Collaborate</h2>
+
+    <form>
+        <fieldset>
+            <label for="goal">What do you need to accomplish?</label>
+            <textarea name="goal" required autofocus placeholder="Describe your goal to your participants"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <label class="fieldsetTitle">Who do you need for this?</label>
+            <div class="leftcontainer">
+                <div>
+                    <label for="participantEmail">Email address</label>
+                    <input name="participantEmail" type="email" required placeholder="Enter email address to use for invitation" />
+                </div>
+                <div>
+                    <label for="participantRole">How can this person contribute?</label>
+                    <input name="participantRole" type="text" placeholder="Tell them what you expect from them" />
+                </div>
+            </div>
+            <div class="rightcontainer">
+                <label class="fieldsetTitle">Participants</label>
+                <ol id="participants">
+                </ol>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <label for="deadline">When do you need to complete your goal?</label>
+            <input name="deadline" type="datetime" placeholder="Enter deadline" />
+        </fieldset>
+
+        <fieldset>
+            <input type="submit" value="Start collaborating" />
+        </fieldset>
+    </form>
+</body>
+</html>
