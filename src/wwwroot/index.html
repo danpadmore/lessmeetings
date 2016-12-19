@@ -3,46 +3,67 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collaborate - Less Meetings</title>
+<title>Start - Collabo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Less Meetings</h1>
-    <h2>Collaborate</h2>
+    <div class="container">
+        <!-- header -->
+        <div class="row">
+            <h1>Collabo <small>Meet less, collaborate more</small></h1>
+        </div>
 
-    <form>
-        <fieldset>
-            <label for="goal">What do you need to accomplish?</label>
-            <textarea name="goal" required autofocus placeholder="Describe your goal to your participants"></textarea>
-        </fieldset>
+        <!-- wizard content -->
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <!-- goal -->
+                    <br />
+                    <div class="form-group">
+                        <label class="h3" for="goal">What do you need to accomplish?</label>
+                        <textarea name="goal" rows="3" class="form-control" required autofocus placeholder="Describe your goal to the participants"></textarea>
+                    </div>
 
-        <fieldset>
-            <label class="fieldsetTitle">Who do you need for this?</label>
-            <div class="leftcontainer">
-                <div>
-                    <label for="participantEmail">Email address</label>
-                    <input name="participantEmail" type="email" required placeholder="Enter email address to use for invitation" />
-                </div>
-                <div>
-                    <label for="participantRole">How can this person contribute?</label>
-                    <input name="participantRole" type="text" placeholder="Tell them what you expect from them" />
-                </div>
+                    <!-- team -->
+                    <br />
+                    <h3>Who do you need for this?</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br />
+                            <div class="form-group">
+                                <label for="participantEmail">Email address</label>
+                                <input name="participantEmail" class="form-control" type="email" required placeholder="Enter email address to invite" />
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label for="participantRole">How can this person contribute?</label>
+                                <input name="participantRole" class="form-control" type="text" placeholder="Tell them what you expect from them" />
+                            </div>
+                            <br />
+                            <input class="btn btn-default" type="button" value="Add more">
+                        </div>
+                        <div class="col-md-6">
+                            <!--<label>Participants</label>-->
+                            <ol id="participants"></ol>
+                        </div>
+                    </div>
+
+                    <!-- deadline -->
+                    <br />
+                    <div class="form-group">
+                        <label class="h3" for="deadline">When do you need to finish this?</label>
+                        <input style="width:50%" name="deadline" class="form-control" type="datetime" placeholder="Enter deadline" />
+                    </div>
+
+                    <!-- confirm -->
+                    <br />
+                    <div>
+                        <input type="submit" class="btn btn-default" value="Start collaborating" />
+                    </div>
+                </form>
             </div>
-            <div class="rightcontainer">
-                <label class="fieldsetTitle">Participants</label>
-                <ol id="participants">
-                </ol>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <label for="deadline">When do you need to complete your goal?</label>
-            <input name="deadline" type="datetime" placeholder="Enter deadline" />
-        </fieldset>
-
-        <fieldset>
-            <input type="submit" value="Start collaborating" />
-        </fieldset>
-    </form>
+        </div>
+    </div>
 </body>
 </html>

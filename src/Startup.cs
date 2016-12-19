@@ -28,6 +28,7 @@ namespace LessMeetings
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
         }
     }
