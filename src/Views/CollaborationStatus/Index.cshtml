@@ -1,0 +1,22 @@
+@model LessMeetings.Models.CollaborationStatus.CollaborationStatusViewModel
+@{
+    ViewData["Title"] = "Done";
+}
+
+<div class="row">
+    <div class="md-col-6">
+        <h3>@Model.Title <small>to be delivered by @Model.Deadline</small></h3>    
+        <p>@Model.Goal</p>
+    </div>
+
+    <table class="table">
+        @foreach(var participant in Model.Participants)
+        {
+          <tr>
+            <td>@participant.Email (@participant.Role)</td>
+            <td>@participant.Response</td>
+            <td>@participant.RespondedAt</td>
+        </tr>  
+        }
+    </table>
+</div>
