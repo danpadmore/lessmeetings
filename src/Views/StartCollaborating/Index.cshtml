@@ -1,68 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start - Collabo</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <!-- header -->
-        <div class="row">
-            <h1>Collabo <small>Meet less, collaborate more</small></h1>
-        </div>
+@model LessMeetings.Models.StartCollaborating.StartCollaboratingRequest
+@{
+    ViewData["Title"] = "Start";
+}
 
-        <!-- wizard content -->
-        <div class="row">
-            <div class="col-md-6">
-                <form method="post">
-                    <!-- goal -->
-                    <br />
-                    <div class="form-group">
-                        <label class="h3" for="goal">What do you need to accomplish?</label>
-                        <textarea name="goal" rows="3" class="form-control" required autofocus placeholder="Describe your goal to the participants"></textarea>
-                    </div>
-
-                    <!-- team -->
-                    <br />
-                    <h3>Who do you need for this?</h3>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <br />
-                            <div class="form-group">
-                                <label for="participantEmail">Email address</label>
-                                <input name="participantEmail" class="form-control" type="email" required placeholder="Enter email address of person to invite" />
-                            </div>
-                            <br />
-                            <div class="form-group">
-                                <label for="participantRole">How can this person contribute?</label>
-                                <input name="participantRole" class="form-control" type="text" placeholder="Tell them what you expect from them" />
-                            </div>
-                            <br />
-                            <input class="btn btn-default" type="button" value="Add more people">
-                        </div>
-                        <div class="col-md-6">
-                            <!--<label>Participants</label>-->
-                            <ol id="participants"></ol>
-                        </div>
-                    </div>
-
-                    <!-- deadline -->
-                    <br />
-                    <div class="form-group">
-                        <label class="h3" for="deadline">When do you need to finish this?</label>
-                        <input style="width:50%" name="deadline" class="form-control" type="datetime" placeholder="Enter deadline" />
-                    </div>
-
-                    <!-- confirm -->
-                    <br />
-                    <div>
-                        <input type="submit" class="btn btn-default" value="Start collaborating" />
-                    </div>
-                </form>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <!-- goal -->
+            <br />
+            <div class="form-group">
+                <label class="h3" for="goal">What do you need to accomplish?</label>
+                @Html.TextAreaFor(m => m.Goal, new { @class = "form-control", rows = 3, autofocus = "", placeholder = "Describe your goal to the participants" })
+                <label class="h3" for="title">Give your project a title</label>
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Enter a title" })
             </div>
-        </div>
+
+            <!-- team -->
+            <br />
+            <h3>Who do you need for this?</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <br />
+                    <div class="form-group">
+                        <label for="participantEmail">Email address</label>
+                        <input id="participantEmail" name="participantEmail" class="form-control" type="email" required placeholder="Enter email address of person to invite" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="participantRole">How can this person contribute?</label>
+                        <input id="participantRole" name="participantRole" class="form-control" type="text" placeholder="Tell them what you expect from them" />
+                    </div>
+                    <br />
+                    <input class="btn btn-default" type="button" value="Add more people">
+                </div>
+                <div class="col-md-6">
+                    <!--<label>Participants</label>-->
+                    <ol id="participants"></ol>
+                </div>
+            </div>
+
+            <!-- deadline -->
+            <br />
+            <div class="form-group">
+                <label class="h3" for="deadline">When do you need to finish this?</label>
+                @Html.TextBoxFor(m => m.Deadline, new { @class = "form-control", placeholder = "Enter deadline", type = "datetime", style = "width:50%" })
+            </div>
+
+            <!-- confirm -->
+            <br />
+            <div>
+                <input type="submit" class="btn btn-default" value="Start collaborating" />
+            </div>
+        </form>
     </div>
-</body>
-</html>
+</div>
